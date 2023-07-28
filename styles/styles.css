@@ -1,0 +1,148 @@
+:root {
+  /*primary*/
+  --dark-cyan: hsl(158, 36%, 37%);
+  --cream: hsl(30, 38%, 92%);
+
+  /*neutral*/
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+}
+
+/*mobile-first*/
+body {
+  background: var(--cream);
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  border-radius: 5%;
+  width: 90%;
+  min-width: 300px;
+  max-width: 550px;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/*image styles*/
+
+.image_container {
+  width: 100%;
+  display: flex;
+}
+.image {
+  width: 100%;
+}
+
+.image--mobile {
+  border-radius: 5% 5% 0 0;
+}
+
+/*image for desktop, shouldn't be visible until we get out of mobile width*/
+.image--desktop {
+  display: none;
+  border-radius: 5% 0 0 5%;
+}
+
+/*text styles*/
+
+/*text-container*/
+.text_container {
+  display: flex;
+  flex-flow: column nowrap;
+  row-gap: 10px;
+  margin: 20px;
+}
+
+/* base text style*/
+.text {
+  font-weight: 700;
+  font-family: "Montserrat", sans-serif;
+  color: var(--dark-grayish-blue);
+  line-height: 1.6;
+  font-size: 14px;
+  text-align: left;
+}
+
+.text--important {
+  font-family: "Fraunces", serif;
+  font-size: 30px;
+  line-height: 1.1;
+}
+
+.text--light {
+  font-weight: 500;
+}
+
+.text--spaced {
+  letter-spacing: 2px;
+}
+
+/*text-color*/
+.text--main_color {
+  color: var(--very-dark-blue);
+}
+
+.text--current_price_color {
+  color: var(--dark-cyan);
+}
+
+.text--old_price {
+  text-decoration: line-through;
+  font-size: 12px;
+}
+
+.prices_container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  column-gap: 20px;
+}
+/*button*/
+.btn {
+  background-color: var(--dark-cyan);
+  border-color: transparent;
+  border-radius: 5px;
+  width: 100%;
+  padding: 15px 0;
+  align-self: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 5px;
+}
+
+.btn:active {
+  background-color: hsl(158, 85%, 11%);
+}
+
+.btn:hover {
+  cursor: pointer;
+}
+.btn_text {
+  color: var(--white);
+}
+
+/* media query desktop*/
+@media (min-width: 600px) {
+  .image--desktop {
+    display: inline-block;
+  }
+  .image--mobile {
+    display: none;
+  }
+  .card {
+    flex-flow: row nowrap;
+    align-items: stretch;
+  }
+  .text_container {
+    width: 80%;
+    justify-content: space-evenly;
+  }
+}
